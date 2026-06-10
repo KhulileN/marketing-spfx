@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "marketing-hub-webparts-client-side-solution",
+    "id": "d37ad36f-94f9-4c4a-bbe1-7910eb483c91",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.22.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "marketing-hub-webparts description"
+      },
+      "longDescription": {
+        "default": "marketing-hub-webparts description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "marketing-hub-webparts Feature",
+        "description": "The feature that activates elements of the marketing-hub-webparts solution.",
+        "id": "2e0f8af2-90a9-425d-8546-32224ef9cd6a",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/marketing-hub-webparts.sppkg"
+  }
+}

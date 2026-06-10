@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "marketing-dashboard-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/marketingDashboard/MarketingDashboardWebPart.js",
+          "manifest": "./src/webparts/marketingDashboard/MarketingDashboardWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "MarketingDashboardWebPartStrings": "lib/webparts/marketingDashboard/loc/{locale}.js"
+  }
+}

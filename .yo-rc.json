@@ -1,0 +1,19 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "useGulp": false,
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "22.16.0",
+    "sdksVersions": {},
+    "version": "1.22.2",
+    "libraryName": "marketing-hub-webparts",
+    "libraryId": "d37ad36f-94f9-4c4a-bbe1-7910eb483c91",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "marketing-hub-webparts",
+    "solutionShortDescription": "marketing-hub-webparts description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}
