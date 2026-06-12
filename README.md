@@ -20,8 +20,8 @@ If you are setting up this project on a new machine or fixing a version mismatch
 
 ### 1. Align Node.js Version
 Ensure you are using Node v18. You can check your version by running:
-```bash
-node -v
+  ```bash
+  node -v
 
 If you are running Node 22, you must downgrade to v18.17.1 using Node Version Manager (NVM) or by reinstalling the standalone v18.17.1 installer.
 
