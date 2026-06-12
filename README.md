@@ -1,64 +1,56 @@
-# marketing-hub-webparts
+# S&S - SharePoint Framework (SPFx) Project
 
-## Summary
-
-Short summary on functionality and used technologies.
-
-[picture of the solution in action, if possible]
-
-## Used SharePoint Framework Version
-
-![version](https://img.shields.io/badge/version-1.22.2-green.svg)
-
-## Applies to
-
-- [SharePoint Framework](https://aka.ms/spfx)
-- [Microsoft 365 tenant](https://docs.microsoft.com/sharepoint/dev/spfx/set-up-your-developer-tenant)
-
-> Get your own free development tenant by subscribing to [Microsoft 365 developer program](http://aka.ms/o365devprogram)
-
-## Prerequisites
-
-> Any special pre-requisites?
-
-## Solution
-
-| Solution    | Author(s)                                               |
-| ----------- | ------------------------------------------------------- |
-| folder name | Author details (name, company, twitter alias with link) |
-
-## Version history
-
-| Version | Date             | Comments        |
-| ------- | ---------------- | --------------- |
-| 1.1     | March 10, 2021   | Update comment  |
-| 1.0     | January 29, 2021 | Initial release |
-
-## Disclaimer
-
-**THIS CODE IS PROVIDED _AS IS_ WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
+This is a SharePoint Framework (SPFx) client-side solution. It contains web parts or extensions built for deployment into Microsoft 365 / SharePoint Online environments.
 
 ---
 
-## Minimal Path to Awesome
+## 🛠 Environment Requirements
 
-- Clone this repository
-- Ensure that you are at the solution folder
-- in the command-line run:
-  - `npm install -g @rushstack/heft`
-  - `npm install`
-  - `heft start`
+This project relies on a specific version of the Microsoft SharePoint Build Rig, which is strict about environmental dependencies. 
 
-> Include any additional steps as needed.
+* **Node.js:** `v18.17.1` (LTS) *(Required)* * *Note: Node v22+ is incompatible with this project's current SPFx version and will throw `MODULE_NOT_FOUND` or stream `TypeError` errors.*
+* **Package Manager:** npm (comes bundled with Node)
+* **Build Tool:** Gulp CLI
 
-Other build commands can be listed using `heft --help`.
+---
 
+## 🚀 Getting Started
 
-## References
+If you are setting up this project on a new machine or fixing a version mismatch, follow these steps in order:
 
-- [Getting started with SharePoint Framework](https://docs.microsoft.com/sharepoint/dev/spfx/set-up-your-developer-tenant)
-- [Building for Microsoft teams](https://docs.microsoft.com/sharepoint/dev/spfx/build-for-teams-overview)
-- [Use Microsoft Graph in your solution](https://docs.microsoft.com/sharepoint/dev/spfx/web-parts/get-started/using-microsoft-graph-apis)
-- [Publish SharePoint Framework applications to the Marketplace](https://docs.microsoft.com/sharepoint/dev/spfx/publish-to-marketplace-overview)
-- [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
-- [Heft Documentation](https://heft.rushstack.io/)
+### 1. Align Node.js Version
+Ensure you are using Node v18. You can check your version by running:
+```bash
+node -v
+
+If you are running Node 22, you must downgrade to v18.17.1 using Node Version Manager (NVM) or by reinstalling the standalone v18.17.1 installer.
+
+2. Clean and Install Dependencies
+Clear out old build artifacts and download the package tree:
+
+# Remove existing modules if switching Node versions
+Remove-Item -Recurse -Force node_modules
+Remove-Item -Force package-lock.json
+
+# Install dependencies
+npm install
+
+3. Trust the Dev Certificate (First time only)
+To allow your local browser to load the web part scripts from localhost:
+gulp trust-dev-cert
+
+4. Run Locally
+Start the local development server and build pipeline:
+gulp serve
+
+This will spin up the local server on port 4321 and open the SharePoint Workbench in your browser.
+
+🔧 Useful Commands & Troubleshooting
+Port 4321 Already in Use
+If gulp serve throws an error indicating port 4321 is blocked, look for the blocking Process ID (PID) and terminate it:
+
+# Find what's on port 4321
+netstat -ano | findstr :4321
+
+# Kill the process (replace 12345 with the PID from the command above)
+taskkill /PID 12345 /F
